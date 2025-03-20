@@ -4,8 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <meta name="description" content="">
+    <title>Digital Payment For Everyone.</title>
+    <meta name="description"
+        content="Digital Payment For Everyone – Easy, Fast & Secure Payments for All! Experience Convenient Digital Payments Today">
     <!-- Link favicon -->
     <link rel="apple-touch-icon" sizes="57x57" href="./assets/favicon/apple-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="./assets/favicon/apple-icon-60x60.png">
@@ -29,7 +30,7 @@
     <link rel="stylesheet" href="./assets/css/reset.css">
 
     <!-- Link preload fonts -->
-    <link rel="preload" href="./assets/fonts/open-sans/OpenSansCondensed-Bold.woff2" as="font" type="font/woff2"
+    <link rel="preload" href="./assets/fonts/open-sans/OpenSans-ExtraboldItalic.woff2" as="font" type="font/woff2"
         crossorigin>
 
     <!-- Link fonts sylesheet -->
@@ -42,18 +43,112 @@
     <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
     <!-- Link library -->
     <link rel="preconnect" href="https://unpkg.com" crossorigin>
     <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
 </head>
 
 <body>
+    <header class="header header-fixed">
+        <div class="container">
+            <div class="header__wapper">
+                <div class="header__logo">
+                    <img src="./assets/images/logo-celo-bank.png" alt="Celo Bank" class="header__logo--img">
+                    <p class="header__logo--text">
+                        CeloBank
+                    </p>
+                </div>
 
+                <ul class="header__list">
+                    <li>
+                        <a href="#!" class="header__item active" data-text="Home">Home</a>
+                    </li>
+                    <li>
+                        <a href="#!" class="header__item" data-text="Products">Products</a>
+                    </li>
+                    <li>
+                        <a href="#!" class="header__item" data-text="Features">Features</a>
+                    </li>
+                    <li>
+                        <a href="#!" class="header__item" data-text="Blog">Blog</a>
+                    </li>
+                </ul>
+
+                <div class="header__btn">
+                    <a href="#!" class="header__btn--login">
+                        Log in
+                    </a>
+
+                    <a href="#!" class="header__btn--signup">
+                        Sign up
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main style="height: 12000px;">
+        <section class="hero">
+            <div class="container">
+                <div class="hero__wapper">
+                    <!-- Content Hero-->
+                    <section class="hero__text">
+                        <span class="span-common">
+                            Digital Smart Wallet
+                        </span>
+                        <h1 class="hero__heading heading-common">
+                            Digital <span class="hero__heading-span">Payment</span> For Everyone.
+                        </h1>
+                        <p class="desc">
+                            We bring together eveything that’s required to build websites and apps that accept payments
+                            and
+                            send payouts globally. We are the best platform.
+                        </p>
+
+                        <div class="hero__form">
+                            <form class="hero__form--container" method="POST"
+                                action="https://api-gateway.fullstack.edu.vn/action_page.php" autocomplete="off">
+
+                                <input class="form__input" type="email" name="email" id="email"
+                                    placeholder="Your email address" required
+                                    pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+
+                                <button class="form__btn btn-form-common btn" type="submit">
+                                    Get Started
+                                </button>
+                            </form>
+                            <span class="hero__form-span">
+                                *We’ll respect the inbox and never share your email.
+                            </span>
+                        </div>
+                    </section>
+
+                    <!-- Content image  -->
+                    <div class="hero__image">
+                        <div class="hero__image--inner">
+                            <div class="hero__visa">
+                                <section class="hero__visa--top">
+                                    <h3 class="hero__visa--heading heading-common">
+                                        Main Balance
+                                    </h3>
+                                    <span class="hero__visa--money">
+                                        $78,355.17
+                                    </span>
+                                </section>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init();
     </script>
 </body>
+
 
 </html>
