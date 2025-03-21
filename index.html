@@ -48,6 +48,23 @@
     <!-- Link library -->
     <link rel="preconnect" href="https://unpkg.com" crossorigin>
     <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+
+    <!-- Auto Lazyload -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const images = document.querySelectorAll("img");
+
+            images.forEach((img) => {
+                const rect = img.getBoundingClientRect();
+
+                if (rect.top > window.innerHeight) {
+                    img.setAttribute("loading", "lazy");
+                }
+            });
+        });
+
+    </script>
+
 </head>
 
 <body>
@@ -65,16 +82,16 @@
 
                 <ul class="header__list">
                     <li>
-                        <a href="#!" class="header__item active" data-text="Home">Home</a>
+                        <a href="#home" class="header__item active" data-text="Home">Home</a>
                     </li>
                     <li>
-                        <a href="#!" class="header__item" data-text="Products">Products</a>
+                        <a href="#products" class="header__item" data-text="Products">Products</a>
                     </li>
                     <li>
-                        <a href="#!" class="header__item" data-text="Features">Features</a>
+                        <a href="#features" class="header__item" data-text="Features">Features</a>
                     </li>
                     <li>
-                        <a href="#!" class="header__item" data-text="Blog">Blog</a>
+                        <a href="#blog" class="header__item" data-text="Blog">Blog</a>
                     </li>
                 </ul>
 
@@ -90,9 +107,9 @@
             </div>
         </div>
     </header>
-    <main style="height: 12000px;">
+    <main>
         <!-- Hero -->
-        <section class="hero">
+        <section class="hero" id="home">
             <div class="container">
                 <div class="hero__wapper">
                     <!-- Content Hero-->
@@ -375,7 +392,7 @@
         </section>
 
         <!-- Payments -->
-        <section class="payments">
+        <section class="payments" id="products">
             <div class="container">
                 <div class="payments__wapper">
 
@@ -476,7 +493,399 @@
                 </div>
             </div>
         </section>
+
+        <!-- Money -->
+        <section class="money" id="features">
+            <div class="container">
+                <div class="money__wapper">
+                    <div class="money__imgaes">
+                        <figure class="money__image">
+                            <img src="./assets/images/money-anytime.png" alt="Transfer and Deposite Your Money Anytime"
+                                class="money__img">
+                        </figure>
+                    </div>
+
+                    <div class="money__bank">
+                        <div class="money__bank--heading">
+                            Choose payment method:
+                        </div>
+
+                        <div class="money__bank--list">
+                            <img src="./assets/images/bank-01.png" alt="Bank icon" class="money__bank--img">
+
+                            <img src="./assets/images/bank-02.png" alt="Bank icon" class="money__bank--img">
+
+                            <img src="./assets/images/bank-03.png" alt="Bank icon" class="money__bank--img">
+
+                            <img src="./assets/images/bank-04.png" alt="Bank icon" class="money__bank--img">
+
+                            <img src="./assets/images/bank-05.png" alt="Bank icon" class="money__bank--img">
+
+                            <div class="money__bank--img money__bank--icon">
+                                <i class="fa-solid fa-plus"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="money__icon--shape">
+                        <img src="./assets/icons/money-icon.svg" alt="Money icon">
+                    </div>
+
+                    <div class="money__content">
+                        <span class="span-common">
+                            Digital Smart Wallet
+                        </span>
+                        <h2 class="money__content--heading heading-common">
+                            Transfer and Deposite Your Money Anytime
+                        </h2>
+
+                        <p class="money__content--desc desc">
+                            We bring together eveything that’s required to build websites and apps that accept payments
+                            and send payouts globally. We are the best platform.
+                        </p>
+
+                        <ul class="money__content--list">
+                            <li class="money__content--item">Powerfull App</li>
+                            <li class="money__content--item">Transparency And Speed</li>
+                            <li class="money__content--item">Multiple Use Capabilities</li>
+                        </ul>
+
+                        <a href="#!" class="money__content--btn btn">Get Started</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Client -->
+        <section class="client">
+            <div class="container">
+                <div class="client__wapper">
+                    <!-- Client header -->
+                    <div class="client__header">
+                        <span class="span-common">
+                            Our Testimonial
+                        </span>
+                        <h2 class="client__heading heading-common">
+                            Our Testimonial
+                        </h2>
+                        <p class="client__desc desc">Read what clients says about us and about our online banking
+                            services that may inspire you</p>
+                    </div>
+
+                    <!-- Client slide -->
+                    <div class="client__inner">
+                        <!-- Box review #1 -->
+                        <div class="client__slide">
+                            <div class="client__slide--box">
+                                <p class="client__slide--desc">
+                                    Fantastic platform for online banking. The best online banking platform I have used.
+                                    Payments, loans, and money transfers have never been so much easier before. I am
+                                    very
+                                    much happy about this great online bank.
+                                </p>
+                            </div>
+
+                            <div class=" client__slide--info">
+                                <img src="./assets/images/avatar-01.jpg" alt="" class="client__slide--avt">
+                                <p class="client__slide--name">
+                                    Alastair Cook
+                                </p>
+                                <span class="client__slide--position">
+                                    Businessmen
+                                </span>
+                            </div>
+                        </div>
+
+                        <!-- Box review #2 -->
+                        <div class="client__slide">
+                            <div class="client__slide--box">
+                                <p class="client__slide--desc">
+                                    Fantastic platform for online banking. The best online banking platform I have used.
+                                    Payments, loans, and money transfers have never been so much easier before. I am
+                                    very much happy about this great online bank.
+                                </p>
+                            </div>
+
+                            <div class=" client__slide--info">
+                                <img src="./assets/images/avatar-02.jpg" alt="" class="client__slide--avt">
+                                <p class="client__slide--name">
+                                    Alastair Foaks
+                                </p>
+                                <span class="client__slide--position">
+                                    Developer .NET
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Client dots -->
+                    <div class="client__dots">
+                        <span class="client__dot-item active"></span>
+                        <span class="client__dot-item"></span>
+                        <span class="client__dot-item"></span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Blog -->
+        <section class="blog" id="blog">
+            <div class="container">
+                <div class="blog__header">
+                    <div class="blog__header--left">
+                        <span class="span-common">
+                            Our Blog
+                        </span>
+                        <h2 class="blog__header--heading heading-common">
+                            Get The Updates
+                        </h2>
+
+                        <p class="blog__header--desc desc">Read our blog for the regular updates about us and about our
+                            online banking
+                            services that may inspire you</p>
+                    </div>
+                    <div class="blog__header--right">
+                        <a href="#!" class="blog__header--btn btn">
+                            Read All
+                        </a>
+                    </div>
+                </div>
+
+                <div class="blog__wrapper">
+                    <!-- Blog item 01 -->
+
+                    <div class="blog__item">
+                        <img src="./assets/images/blog-01.jpg"
+                            alt="Online bank is the best and secure way to save in the future" class="blog__item--img">
+                        <section class="blog__info">
+                            <span class="blog__info--date">
+                                July 03, 2022
+                            </span>
+
+                            <a href="#!">
+                                <h3 class="blog__info--heading text-truncate">
+                                    Online bank is the best and secure way to save in the future...
+                                </h3>
+                            </a>
+
+                            <a href="#!" class="blog__info--cta">
+                                Read Blog
+                            </a>
+                        </section>
+                    </div>
+
+                    <!-- Blog item 02 -->
+
+                    <div class="blog__item">
+                        <img src="./assets/images/blog-02.jpg" alt="Why do you need to open a bank account in online.."
+                            class="blog__item--img">
+                        <section class="blog__info">
+                            <span class="blog__info--date">
+                                July 03, 2022
+                            </span>
+
+                            <a href="#!">
+                                <h3 class="blog__info--heading text-truncate">
+                                    Why do you need to open a bank account in online..
+                                </h3>
+                            </a>
+
+                            <a href="#!" class="blog__info--cta">
+                                Read Blog
+                            </a>
+                        </section>
+                    </div>
+
+                    <!-- Blog item 03 -->
+
+                    <div class="blog__item">
+                        <img src="./assets/images/blog-03.jpg"
+                            alt="The benefits that we get from credit card at anytime..." class="blog__item--img">
+                        <section class="blog__info">
+                            <span class="blog__info--date">
+                                July 03, 2022
+                            </span>
+
+                            <a href="#!">
+                                <h3 class="blog__info--heading text-truncate">
+                                    The benefits that we get from credit card at anytime...
+                                </h3>
+                            </a>
+
+                            <a href="#!" class="blog__info--cta">
+                                Read Blog
+                            </a>
+                        </section>
+                    </div>
+
+                    <!-- Blog item 04 -->
+
+                    <div class="blog__item">
+                        <img src="./assets/images/blog-04.jpg"
+                            alt="How to manage your money in online in this busy days..." class="blog__item--img">
+                        <section class="blog__info">
+                            <span class="blog__info--date">
+                                July 03, 2022
+                            </span>
+
+                            <a href="#!">
+                                <h3 class="blog__info--heading text-truncate">
+                                    How to manage your money in online in this busy days...
+                                </h3>
+                            </a>
+
+                            <a href="#!" class="blog__info--cta">
+                                Read Blog
+                            </a>
+                        </section>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Down -->
+        <section class="down">
+            <div class="container">
+                <div class="down__wapper">
+                    <span class="down__span span-common">
+                        Our App
+                    </span>
+                    <h2 class="down__heading heading-common">
+                        Download the Apps
+                    </h2>
+                    <p class="down__desc desc">
+                        Download our mobile apps and get started today with a special online bank and move faster
+                    </p>
+
+                    <div class="down__app">
+                        <a href="#!">
+                            <div class="down__app--btn">
+                                <img src="./assets/icons/ch-play.svg" alt="CH Play" class="down__app--img">
+                            </div>
+                        </a>
+
+                        <a href="#!">
+                            <div class="down__app--btn">
+                                <img src="./assets/icons/app-store.svg" alt="App Store" class="down__app--img">
+                            </div>
+                        </a>
+                    </div>
+
+                    <img src="./assets/icons/shape-down.svg" alt="shape icon" class="down__shape">
+
+                    <img src="./assets/icons/shape-down.svg" alt="shape icon" class="down__shape">
+
+                    <img src="./assets/icons/shape-down.svg" alt="shape icon" class="down__shape">
+
+                    <img src="./assets/icons/shape-down.svg" alt="shape icon" class="down__shape">
+                </div>
+            </div>
+        </section>
     </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__wapper">
+
+                <!-- Column 1 -->
+                <a href="#" class="header__logo" style="padding: 8px 0; width: fit-content;">
+                    <img src="./assets/images/logo-celo-bank.png" alt="Celo Bank" class="header__logo--img">
+                    <p class="header__logo--text">
+                        CeloBank
+                    </p>
+                </a>
+
+                <!-- Column 2 -->
+                <div class="footer__column">
+                    <p class="footer__column--heading">
+                        Sitemap
+                    </p>
+
+                    <ul class="footer__list">
+                        <li>
+                            <a href="#!" class="footer__item">Home</a>
+                        </li>
+                        <li>
+                            <a href="#!" class="footer__item">Abouts</a>
+                        </li>
+                        <li>
+                            <a href="#!" class="footer__item">Growers</a>
+                        </li>
+                        <li>
+                            <a href="#!" class="footer__item">Merchants</a>
+                        </li>
+                        <li>
+                            <a href="#!" class="footer__item">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Column 3 -->
+                <div class="footer__column">
+                    <p class="footer__column--heading">
+                        Socials
+                    </p>
+
+                    <ul class="footer__list">
+                        <li>
+                            <a href="#!" class="footer__item">Facebook</a>
+                        </li>
+                        <li>
+                            <a href="#!" class="footer__item">Linkedin</a>
+                        </li>
+                        <li>
+                            <a href="#!" class="footer__item">Instagram</a>
+                        </li>
+                        <li>
+                            <a href="#!" class="footer__item">Twitter</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Column 4 -->
+                <div class="footer__column">
+                    <p class="footer__column--heading">
+                        Head Office
+                    </p>
+
+                    <p class="footer__desc desc">
+                        Xilliams Corner Wine © 2017. 1112 A Market St # Ste B22, Charlottesville, CA 45565
+                    </p>
+
+                    <p class="footer__column--heading footer__column--heading-2">
+                        Head Office
+                    </p>
+
+                    <form method="POST" action="https://api-gateway.fullstack.edu.vn/action_page.php"
+                        class="footer__form" autocomplete="off">
+                        <input class="footer__input" type="email" name="email" id="email" placeholder="Email address..."
+                            required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+                        <button class="footer__form--submit btn" type="submit">
+                            Subscribe
+                        </button>
+                    </form>
+                </div>
+
+            </div>
+
+            <div class="footer__info">
+                <p class="footer__email">
+                    email@gmail.com
+                </p>
+
+                <p class="footer__phone">
+                    (123) 456-7890
+                </p>
+            </div>
+        </div>
+
+        <div class="footer__copyright">
+            <span class="footer__copyright--text">
+                © 2020 Ligft Media All rights reserved.
+            </span>
+        </div>
+    </footer>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
