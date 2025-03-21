@@ -38,6 +38,15 @@ a {
     text-decoration: none;
 }
 
+
+.text-truncate {
+    display: var(--text-truncate-display);
+    -webkit-line-clamp: var(--line-clamp-lines);
+    -webkit-box-orient: var(--text-truncate-orient);
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
 .container {
     width: 1170px;
     max-width: calc(100% - 48px);
@@ -49,10 +58,13 @@ a {
     align-items: center;
     justify-content: center;
     min-width: 149px;
+    min-height: 58px;
+    font-size: 1.6rem;
+    font-weight: 600;
     color: var(--white-color);
     line-height: 58px;
     background: var(--black-brand-color);
-    border: 2px;
+    border-radius: 8px;
     border: 2px solid var(--black-brand-color);
     transition: background, color, border-color;
     transition-duration: 0.3s;
@@ -274,6 +286,7 @@ a {
 }
 
 .hero__heading {
+    display: block;
     width: 500px;
     margin-top: 12px;
     font-size: 6rem;
@@ -346,7 +359,8 @@ a {
     background-repeat: no-repeat;
 }
 
-.hero__visa {
+.hero__visa,
+.payments__card {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -358,7 +372,9 @@ a {
 }
 
 .hero__visa::before,
-.hero__visa::after {
+.hero__visa::after,
+.payments__card::before,
+.payments__card::after {
     content: "";
     display: inline-block;
     position: absolute;
@@ -368,26 +384,31 @@ a {
     width: 100%;
 }
 
-.hero__visa::before {
+.hero__visa::before,
+.payments__card::before {
     background-image: url(../images/bg-visa.png);
     background-size: cover;
     background-repeat: no-repeat;
     z-index: 2;
 }
 
-.hero__visa::after {
+.hero__visa::after,
+.payments__card::after {
     background: linear-gradient(76deg, #30ACEA 11.52%, #316FEA 70.78%);
     z-index: 1;
     border-radius: 20px;
 }
 
-.hero__visa--top {
+.hero__visa--top,
+.payments__card--top {
     position: relative;
     z-index: 3;
 }
 
 .hero__visa--top::before,
-.hero__visa--top::after {
+.hero__visa--top::after,
+.payments__card--top::before,
+.payments__card--top::after {
     content: "";
     display: inline-block;
     position: absolute;
@@ -397,40 +418,46 @@ a {
     border-radius: 50%;
 }
 
-.hero__visa--top::before {
+.hero__visa--top::before,
+.payments__card--top::before {
     right: 0;
     opacity: 0.8;
     z-index: 4;
 }
 
-.hero__visa--top::after {
+.hero__visa--top::after,
+.payments__card--top::after {
     top: 0;
     right: 5%;
     background: #FE6565;
     opacity: 0.8;
 }
 
-.hero__visa--heading {
-    font-size: 1.4rem;
+.hero__visa--heading,
+.payments__card--heading {
+    font-size: 1.2rem;
     font-weight: 400;
     color: var(--white-color);
 }
 
-.hero__visa--money {
+.hero__visa--money,
+.payments__money {
     display: block;
-    margin-top: 2px;
+    margin-top: 4px;
     color: var(--white-color);
     font-size: 2.2rem;
     font-weight: 700;
 }
 
-.hero__visa--bottom {
+.hero__visa--bottom,
+.payments__card--bottom {
     display: grid;
     grid-template: repeat(2, 1fr) / repeat(2, 1fr);
     gap: 5px 12px;
 }
 
-.hero__visa--bottom-text {
+.hero__visa--bottom-text,
+.payments__card--bottom-text {
     display: block;
     color: var(--white-color);
     font-size: 1rem;
@@ -494,12 +521,14 @@ a {
     row-gap: 28px;
 }
 
-.transections__bottom--list {
+.transections__bottom--list,
+.sendmoney {
     display: flex;
     align-items: center;
 }
 
-.transections__bottom-image {
+.transections__bottom-image,
+.sendmoney__image {
     display: flex !important;
     align-items: center;
     justify-content: center;
@@ -510,21 +539,25 @@ a {
     object-fit: cover;
 }
 
-.transections__bottom--img {
+.transections__bottom--img,
+.sendmoney__img {
     color: #4AB5E3;
 }
 
-.transections__bottom--group {
+.transections__bottom--group,
+.sendmoney__grounp {
     margin-left: 14px;
 }
 
-.transections__bottom--heading {
+.transections__bottom--heading,
+.sendmoney__heading {
     font-size: 1.4rem;
     font-weight: 600;
 }
 
 .transections__bottom--desc,
-.transections__money--bottom {
+.transections__money--bottom,
+.sendmoney__desc {
     width: 100%;
     height: 100% !important;
     font-size: 1rem;
@@ -532,12 +565,14 @@ a {
     line-height: normal;
 }
 
-.transections__bottom--money {
+.transections__bottom--money,
+.sendmoney__money {
     margin-left: auto;
     text-align: right;
 }
 
-.transections__money--top {
+.transections__money--top,
+.sendmoney__money--top {
     font-size: 1.4rem;
     font-weight: 600;
     line-height: normal;
@@ -574,6 +609,7 @@ a {
 }
 
 .hero__deposite--number {
+    margin-top: 0;
     margin-left: auto;
     color: #4AB5E3;
     font-size: 1.4rem;
@@ -649,4 +685,345 @@ a {
 .interest__text {
     font-size: 1.6rem;
     font-weight: 400;
+}
+
+/* Works */
+.works {
+    padding: 80px 0;
+    background: var(--white-color);
+}
+
+.works__wapper {
+    display: flex;
+    align-items: center;
+    column-gap: 230px;
+}
+
+.works__images {
+    position: relative;
+    width: 41%;
+    height: 619px;
+    z-index: 2;
+    flex-shrink: 0;
+}
+
+/* .works__images::before,
+.works__images::after {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    height: 88%;
+    z-index: -1;
+} */
+
+.works__images::before {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 89%;
+    background-image: url(../images/bg-image-works.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: -1;
+}
+
+.works__img--people {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 456px;
+    height: 619px;
+    object-fit: cover;
+}
+
+.works__congra {
+    position: absolute;
+    top: 79%;
+    left: 73%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 10px;
+    width: 226px;
+    height: 70px;
+    padding: 15px;
+    border-radius: 8px;
+    background: #FFFDFA;
+    box-shadow: 0px 14px 34px 0px rgba(0, 0, 0, 0.07);
+}
+
+.works_congra--icon {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+}
+
+.work__congra--container {
+    display: flex;
+    flex-direction: column;
+}
+
+.work__congra--title,
+.work__congra--desc {
+    color: var(--black-brand-color);
+    font-family: 'Inter', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+
+.work__congra--desc {
+    margin-top: 5px;
+    color: var(--text-color-76);
+    font-size: 1.2rem;
+    font-weight: 400;
+}
+
+.works__icon--card {
+    position: absolute;
+    top: 12%;
+    left: 75%;
+}
+
+.works__heading {
+    margin-top: 12px;
+}
+
+.works__list--heading {
+    color: var(--black-brand-color);
+    font-size: 2.2rem;
+    font-weight: 600;
+    line-height: 1.45;
+}
+
+.works__desc {
+    margin-top: 16px;
+    color: var(--text-color-76);
+    font-size: 1.6rem;
+    line-height: 1.75;
+}
+
+.works__list:nth-of-type(1) {
+    margin-top: 70px;
+}
+
+.works__list {
+    display: flex;
+    flex-direction: column;
+}
+
+.works__list:nth-of-type(2),
+.works__list:nth-of-type(3) {
+    margin-top: 30px;
+}
+
+/* Payments */
+.payments {
+    padding: 80px 0;
+    background: var(--white-color);
+}
+
+.payments__wapper {
+    display: flex;
+    align-items: center;
+    column-gap: 130px;
+}
+
+.payments__content {
+    width: 41%;
+    flex-shrink: 0;
+}
+
+.payments__heading {
+    margin-top: 12px;
+}
+
+.payments__list {
+    margin-top: 28px;
+}
+
+.payments__item {
+    position: relative;
+    padding-left: 24px;
+    color: #212832;
+    font-size: 1.8rem;
+    font-weight: 600;
+    line-height: 1.66;
+}
+
+.payments__item:before {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    transform: translateY(-50%);
+    background: var(--primary-color);
+}
+
+.payments__item+.payments__item {
+    margin-top: 18px;
+}
+
+.payments__btn {
+    margin-top: 38px;
+    width: 149px;
+    height: 58px;
+}
+
+/* Card */
+.payments__image {
+    width: 482px;
+    position: relative;
+}
+
+.payments__card {
+    width: 482px;
+    height: 322px;
+    padding: 38px;
+}
+
+.payments__card::before {
+    background-image: url(../images/bg-visa-02.png);
+}
+
+.payments__card--heading {
+    font-size: 2rem;
+}
+
+.payments__money {
+    margin-top: 10px;
+    font-size: 3.2rem;
+}
+
+.payments__card--top::before,
+.payments__card--top::after {
+    width: 48px;
+    height: 48px;
+}
+
+.payments__card--top::after {
+    right: 7%;
+}
+
+.payments__card--bottom {
+    gap: 4px 26px;
+}
+
+.payments__card--bottom-text {
+    display: block;
+    white-space: nowrap;
+}
+
+.payments__card--bottom-text:nth-of-type(1),
+.payments__card--bottom-text:nth-of-type(4) {
+    font-size: 2rem;
+    font-weight: 400;
+}
+
+.payments__card--bottom-text:nth-of-type(2),
+.payments__card--bottom-text:nth-of-type(3) {
+    font-size: 2.2rem;
+    font-weight: 600;
+}
+
+
+
+.sendmoney {
+    width: 276px;
+    height: 86px;
+    padding: 23px 13px;
+    background: var(--white-color);
+    border-radius: 12px;
+    box-shadow: 0px 14px 38px 0px rgba(0, 0, 0, 0.07);
+    z-index: 5;
+}
+
+.sendmoney {
+    position: absolute;
+    top: -48px;
+    left: 61%;
+}
+
+.sendmoney__image {
+    background: #FBF0F0;
+}
+
+.sendmoney__heading,
+.sendmoney__desc,
+.sendmoney__money--top,
+.sendmoney__money--bottom {
+    font-family: Inter, sans-serif;
+}
+
+.sendmoney__heading {
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.sendmoney__desc {
+    margin-top: 4px;
+}
+
+.sendmoney__money--top {
+    color: var(--black-brand-color);
+    font-size: 1.6rem;
+    font-weight: 400;
+}
+
+.sendmoney__money--bottom {
+    display: block;
+    margin-top: 5px;
+    font-size: 1rem;
+    color: var(--text-color-76);
+}
+
+.income {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    position: absolute;
+    left: 93%;
+    bottom: -55px;
+    padding: 15px;
+    width: 120px;
+    height: 120px;
+    border-radius: 16px;
+    background: #439F90;
+    z-index: 5;
+}
+
+.income__image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    background: var(--white-color);
+    border-radius: 8px;
+}
+
+.income__img {
+    width: 14px;
+    height: 14px;
+    object-fit: cover;
+}
+
+.income__heading {
+    margin-top: 14px;
+    color: #FFF;
+    font-size: 1.2rem;
+}
+
+.income__money {
+    margin-top: 6px;
+    color: #FFF;
+    font-size: 1.8rem;
+    font-weight: 600;
 }
