@@ -544,6 +544,12 @@ a {
     color: #4AB5E3;
 }
 
+.transections__bottom--img {
+    width: 20px;
+    height: 20px;
+    object-fit: cover;
+}
+
 .transections__bottom--group,
 .sendmoney__grounp {
     margin-left: 14px;
