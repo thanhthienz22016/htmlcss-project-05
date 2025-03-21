@@ -1536,12 +1536,10 @@ a {
 
 .footer__wapper {
     display: flex;
+    align-items: flex-start;
     column-gap: 163px;
 }
 
-.footer__logo {
-    align-items: flex-start;
-}
 
 .footer__column--heading {
     color: var(--black-brand-color);
